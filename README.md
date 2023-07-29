@@ -15,6 +15,11 @@ This project aims to classify images into six different scenes: buildings, fores
           - [key Features of Fifty-One:](#key-features-of-fifty-one)
   - [Training Process](#training-process)
       - [Models used :](#models-used-)
+        - [simple model](#simple-model)
+        - [Simple Model with Norm and Dropout](#simple-model-with-norm-and-dropout)
+        - [Sigmoid and Tanh Activation Models](#sigmoid-and-tanh-activation-models)
+          - [Sigmoid Activation Model](#sigmoid-activation-model)
+          - [Tanh Activation Model](#tanh-activation-model)
 
 ## Overview
 
@@ -81,9 +86,9 @@ In this section, we present a comparison of the training and test accuracy for e
 Training and Test Accuracy:
     
 
+![simple_model](content/simple_relu_acc.png)
 
-
-In the graph above, the blue line represents the training accuracy, while the orange line represents the test accuracy. The increasing gap between the two lines indicates the model's tendency to overfit the training data, resulting in reduced generalization to unseen data.
+In the graph above, the blue line represents the training accuracy, while the red line represents the test accuracy. The increasing gap between the two lines indicates the model's tendency to overfit the training data, resulting in reduced generalization to unseen data.
 
 To improve the model's performance and mitigate overfitting, we may consider techniques like dropout, batch normalization, or early stopping during training. Experimenting with different hyperparameters could also help achieve a better balance between training and test accuracy.
 
@@ -103,9 +108,12 @@ To improve the model's performance and mitigate overfitting, we may consider tec
 
 
 Training and Test Accuracy:
-    
 
-n the graph above, the blue line represents the training accuracy, while the orange line represents the test accuracy. The smaller gap between the two lines clearly indicates that the model is not overfitting to the training data. Instead, it demonstrates better generalization capabilities, allowing it to perform well on unseen test data.
+
+![simple_model](content/simple_drop_norm_acc.png)
+
+
+n the graph above, the blue line represents the training accuracy, while the red line represents the test accuracy. The smaller gap between the two lines clearly indicates that the model is not overfitting to the training data. Instead, it demonstrates better generalization capabilities, allowing it to perform well on unseen test data.
 
 
 
@@ -121,6 +129,8 @@ The sigmoid activation model uses the same architecture as the simple model but 
 
 Training and Test Accuracy:
 
+![simple_model](content/Sigmoid_acc.png)
+
 
 ###### Tanh Activation Model
 
@@ -129,5 +139,8 @@ Similarly, the tanh activation model retains the same architecture as the simple
 ```Conv2D -> Tanh -> Conv2D -> Tanh -> MaxPool -> Conv2D -> Tanh -> Conv2D -> Tanh -> MaxPool -> Conv2D -> Tanh -> Conv2D -> Tanh -> MaxPool-> Flatten -> FC -> Tanh -> FC -> Tanh -> FC```
 
 Training and Test Accuracy:
+
+![simple_model](content/tanh_acc.png)
+
 
 [in progers]
