@@ -143,4 +143,12 @@ Training and Test Accuracy:
 ![simple_model](content/tanh_acc.png)
 
 
+##### Conclusion
+After conducting an extensive comparison, we found that each model showed unique strengths and weaknesses. The simple model with normalization and dropout exhibited improved performance, effectively handling overfitting. The sigmoid activation model displayed competitive results, while the tanh activation model provided distinct characteristics.
+
+Based on this analysis, we recommend the model that best suits your specific requirements for image classification tasks. We hope this model comparison proves valuable for your machine learning endeavors.
+
+
+![simple_model](content/combined_plot.png)
+
 [in progers]
