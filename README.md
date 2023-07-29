@@ -48,13 +48,7 @@ Fifty-One is an open-source library that empowers data scientists and machine le
 
 5. Scalability: Designed to handle large datasets, Fifty-One proves to be a practical tool for real-world machine learning projects.
 
-## Training Process
 
-#### Models used :
-    1. simple model 
-    2. simple model with norm and dropout
-    3. modal sigmoid
-    4. model tanh
     
 
 https://github.com/erfanakk/Intel_classification/assets/87381197/1f9ca9ba-17b0-47ca-8b07-59da7a96f5fc
@@ -63,5 +57,15 @@ https://github.com/erfanakk/Intel_classification/assets/87381197/1f9ca9ba-17b0-4
 
 In this video, we showcase the capabilities of FiftyOne in enhancing the dataset curation process, analyzing class distributions.
 
+
+
+
+## Training Process
+
+#### Models used :
+    1. simple model 
+    2. simple model with norm and dropout
+    3. modal sigmoid
+    4. model tanh
 
 [in progers]
