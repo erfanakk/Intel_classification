@@ -3,7 +3,7 @@
 
 ![PyTorch Logo](https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png)
 
-This project aims to classify images into six different scenes: buildings, forest, glacier, mountain, sea, and street. The images are categorized using deep learning techniques implemented in PyTorch. The dataset used for this project was directly downloaded from Kaggle and was originally published for the Analytics Vidhya Intel Image Classification Challenge. We extend our gratitude to both Kaggle and Analytics Vidhya for providing this dataset.
+This project aims to classify images into six different scenes: buildings, forest, glacier, mountain, sea, and street. The images are categorized using deep learning techniques implemented in PyTorch. The dataset used for this project was directly downloaded from [Kaggle](https://www.kaggle.com/puneet6060/intel-image-classification) and was originally published for the Analytics Vidhya Intel Image Classification Challenge. We extend our gratitude to both Kaggle and Analytics Vidhya for providing this dataset.
 
 ## Table of Contents
 
@@ -13,6 +13,8 @@ This project aims to classify images into six different scenes: buildings, fores
   - [Dataset](#dataset)
       - [FiftyOne: Dataset Exploration and Visualization](#fiftyone-dataset-exploration-and-visualization)
           - [key Features of Fifty-One:](#key-features-of-fifty-one)
+  - [Training Process](#training-process)
+      - [Models used :](#models-used-)
 
 ## Overview
 
@@ -46,9 +48,14 @@ Fifty-One is an open-source library that empowers data scientists and machine le
 
 5. Scalability: Designed to handle large datasets, Fifty-One proves to be a practical tool for real-world machine learning projects.
 
+## Training Process
 
-
-
+#### Models used :
+    1. simple model 
+    2. simple model with norm and dropout
+    3. modal sigmoid
+    4. model tanh
+    
 
 https://github.com/erfanakk/Intel_classification/assets/87381197/1f9ca9ba-17b0-47ca-8b07-59da7a96f5fc
 
