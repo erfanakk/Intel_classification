@@ -48,7 +48,11 @@ Fifty-One is an open-source library that empowers data scientists and machine le
 
 
 
-C:\Users\Farhang\Desktop\torch\project\intel_classification\FiftyOne.mp4
+
+
+https://github.com/erfanakk/Intel_classification/assets/87381197/1f9ca9ba-17b0-47ca-8b07-59da7a96f5fc
+
+
 
 In this video, we showcase the capabilities of FiftyOne in enhancing the dataset curation process, analyzing class distributions.
 
