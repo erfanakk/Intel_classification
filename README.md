@@ -61,11 +61,73 @@ In this video, we showcase the capabilities of FiftyOne in enhancing the dataset
 
 
 ## Training Process
+In this section, we present a comparison of the training and test accuracy for each of the four models used in our image classification project:
 
 #### Models used :
     1. simple model 
     2. simple model with norm and dropout
     3. modal sigmoid
     4. model tanh
+    
+
+##### simple model 
+
+ - The simple model demonstrates reasonable performance during training, achieving high accuracy on the training data. However, it appears to suffer from overfitting, as the accuracy on the test data is comparatively lower.
+
+
+``` Conv2D -> ReLU -> Conv2D -> ReLU -> MaxPool -> Conv2D -> ReLUConv2D -> ReLU -> MaxPool -> Flatten -> FC -> ReLU -> FC -> ReLU -> FC ```
+
+
+Training and Test Accuracy:
+    
+
+
+
+In the graph above, the blue line represents the training accuracy, while the orange line represents the test accuracy. The increasing gap between the two lines indicates the model's tendency to overfit the training data, resulting in reduced generalization to unseen data.
+
+To improve the model's performance and mitigate overfitting, we may consider techniques like dropout, batch normalization, or early stopping during training. Experimenting with different hyperparameters could also help achieve a better balance between training and test accuracy.
+
+
+
+
+
+
+
+##### Simple Model with Norm and Dropout
+
+ -  By incorporating batch normalization layers and dropout regularization, we effectively alleviate overfitting, resulting in a more balanced training and test accuracy. While the training accuracy might be slightly lower compared to the simple model, this trade-off is beneficial as we achieve better generalization to unseen data and prevent overfitting issues.
+
+
+``` Conv2D -> ReLU -> BatchNorm -> Conv2D -> ReLU -> MaxPool -> Conv2D -> ReLU -> BatchNorm -> Conv2D -> ReLU -> MaxPool -> Conv2D -> ReLU -> Conv2D -> ReLU -> MaxPool -> Flatten -> FC -> ReLU -> Dropout -> FC -> ReLU -> FC```
+
+
+
+Training and Test Accuracy:
+    
+
+n the graph above, the blue line represents the training accuracy, while the orange line represents the test accuracy. The smaller gap between the two lines clearly indicates that the model is not overfitting to the training data. Instead, it demonstrates better generalization capabilities, allowing it to perform well on unseen test data.
+
+
+
+##### Sigmoid and Tanh Activation Models
+
+The sigmoid and tanh activation models, while having distinct characteristics, did not perform as well in terms of accuracy compared to the other models in our image classification project.
+
+###### Sigmoid Activation Model
+
+The sigmoid activation model uses the same architecture as the simple model but replaces the activation function with sigmoid for all layers, including the output layer.
+
+``` Conv2D -> Sigmoid -> Conv2D -> Sigmoid -> MaxPool -> Conv2D -> Sigmoid -> Conv2D -> Sigmoid -> MaxPool -> Conv2D -> Sigmoid -> Conv2D -> Sigmoid -> MaxPool -> Flatten -> FC -> Sigmoid -> FC -> Sigmoid -> FC ```
+
+Training and Test Accuracy:
+
+
+###### Tanh Activation Model
+
+Similarly, the tanh activation model retains the same architecture as the simple model but replaces the activation function with tanh for all layers.
+
+```Conv2D -> Tanh -> Conv2D -> Tanh -> MaxPool -> Conv2D -> Tanh -> Conv2D -> Tanh -> MaxPool -> Conv2D -> Tanh -> Conv2D -> Tanh -> MaxPool-> Flatten -> FC -> Tanh -> FC -> Tanh -> FC```
+
+Training and Test Accuracy:
 
 [in progers]
