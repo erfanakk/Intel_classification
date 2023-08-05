@@ -6,7 +6,6 @@
 This project aims to classify images into six different scenes: buildings, forest, glacier, mountain, sea, and street. The images are categorized using deep learning techniques implemented in PyTorch. The dataset used for this project was directly downloaded from [Kaggle](https://www.kaggle.com/puneet6060/intel-image-classification) and was originally published for the Analytics Vidhya Intel Image Classification Challenge. We extend our gratitude to both Kaggle and Analytics Vidhya for providing this dataset.
 
 ## Table of Contents
-
 - [Intel Image Classification with Pytorch](#intel-image-classification-with-pytorch)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
@@ -20,6 +19,10 @@ This project aims to classify images into six different scenes: buildings, fores
         - [Sigmoid and Tanh Activation Models](#sigmoid-and-tanh-activation-models)
           - [Sigmoid Activation Model](#sigmoid-activation-model)
           - [Tanh Activation Model](#tanh-activation-model)
+        - [Transfer Learning](#transfer-learning)
+          - [Transfer Learning with ResNet-50:](#transfer-learning-with-resnet-50)
+          - [Transfer Learning with MobileNet:](#transfer-learning-with-mobilenet)
+        - [The Power of Ensemble:](#the-power-of-ensemble)
 
 ## Overview
 
