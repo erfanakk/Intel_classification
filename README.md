@@ -151,4 +151,101 @@ Based on this analysis, we recommend the model that best suits your specific req
 
 ![simple_model](content/combined_plot.png)
 
-[in progers]
+
+
+##### Transfer Learning
+
+Transfer learning is a powerful technique in the field of deep learning that allows us to leverage the knowledge gained from pre-trained models on large datasets and apply it to new, similar tasks. When we freeze the weights of a pre-trained model, it means we prevent them from being updated during the training process for our specific task. By freezing the weights, we retain the learned representations from the original dataset, and these representations act as a strong feature extractor for our new data.
+Freezing weights is particularly useful when we have limited data for the new task or when the new task is similar to the original task on which the pre-trained model was trained. In such cases, freezing prevents overfitting and helps the model to generalize better on the new data.
+The frozen layers of the pre-trained model are like a feature extraction backbone, providing high-level representations of the input data. On top of these frozen layers, we add new layers specific to our task and train only these new layers. This approach enables us to fine-tune the model for the new task while preserving the valuable knowledge obtained from the pre-trained model.
+
+
+
+
+
+###### Transfer Learning with ResNet-50:
+ResNet-50, a deep convolutional neural network, stands tall as a versatile transfer learning option. By leveraging its pre-trained weights, we infuse our image classification task with the knowledge of millions of images. Watch as ResNet-50 adapts to our dataset, capturing intricate details with remarkable precision. 
+
+
+```bash
+class TransferResnet50(nn.Module)
+    def __init__(self, num_classes=6):
+        super(TransferResnet50, self).__init__()
+        self.resnet50 = models.resnet50(pretrained=True)
+        
+        for param in self.resnet50.parameters():
+            param.requires_grad = False
+                
+        self.resnet50.fc = nn.Linear(self.resnet50.fc.in_features, num_classes)
+        
+    def forward(self, x):
+        return self.resnet50(x)
+```
+
+
+Training and Test Accuracy:
+
+![resnet50_acc](content/resnet50_acc.png)
+
+
+
+###### Transfer Learning with MobileNet:
+Next up is the cutting-edge MobileNetV3, a lightweight and efficient architecture designed for mobile and embedded devices. Its compact design doesn't compromise accuracy, making it a perfect choice for real-time applications. Witness MobileNetV3's ingenuity in understanding our scenes and delivering outstanding results!
+
+```bash
+class TransferMobileNet(nn.Module)
+    def __init__(self, num_classes=6):
+        super(TransferMobileNet, self).__init__()
+        self.MobileNet = models.mobilenet_v2(pretrained=True)
+        
+        for param in self.MobileNet.parameters():
+            param.requires_grad = False
+                
+        self.MobileNet.classifier[-1] = nn.Linear(self.MobileNet.classifier[-1].in_features, num_classes)
+        
+    def forward(self, x):
+        return self.MobileNet(x)
+```
+
+
+Training and Test Accuracy:
+
+![mobilenet_acc](content/mobilenet_accpng)
+
+
+
+##### The Power of Ensemble:
+Ensemble learning is a powerful technique in machine learning where multiple models are combined to make more accurate and robust predictions. Instead of relying on the output of a single model, ensemble methods leverage the collective knowledge of multiple models to improve overall performance.
+The key idea behind ensemble learning is that different models may have different strengths and weaknesses, and by combining their predictions, we can mitigate the shortcomings of individual models and exploit their complementary strengths. This can lead to a more accurate and reliable final prediction.
+Ensemble learning is like having a diverse team of experts working together to solve a problem. Each member brings their unique expertise, and by combining their insights, the team can arrive at more accurate and reliable solutions.
+Now, we embark on an ingenious journey by combining the forces of ResNet-50 and MobileNetV2 through ensemble learning. This dynamic duo brings a whole new level of accuracy and robustness to our image classification project. By fusing their predictions, we create an ensemble model that excels in scene recognition, embracing the strengths of both architectures. 🌟
+
+
+```bash
+class MyEnsemble(nn.Module)
+
+
+    def __init__(self, modelA, modelB, num_class=6):
+        super(MyEnsemble, self).__init__()
+        self.modelA = modelA
+        self.modelB = modelB
+        
+
+
+        self.fc1 = nn.Linear(num_class *2  , num_class)
+
+
+    def forward(self, x):
+        out1 = self.modelA(x)
+        out2 = self.modelB(x)
+
+        out = torch.cat((out1, out2), dim=1)
+ 
+        x = self.fc1(out)
+        return x
+```
+
+Training and Test Accuracy:
+
+![Ensemble_cat_acc](content/Ensemble_cat_acc.png)
+
