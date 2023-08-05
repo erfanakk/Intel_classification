@@ -213,7 +213,7 @@ class TransferMobileNet(nn.Module)
 
 Training and Test Accuracy:
 
-![mobilenet_acc](content/mobilenet_accpng)
+![mobilenet_acc](content/mobilenet_acc.png)
 
 
 
